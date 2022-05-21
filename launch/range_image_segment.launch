@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- SegmentGroundPlane by GPT -->
+  <!-- <include file="$(find ground_plane_fitting)/launch/ground_plane_fitting.launch"/> -->
+
+  <!-- Clustering -->
+  <node name="range_image_segment" pkg="range_image_segment" type="range_image_segment" output="screen">
+    <!-- Input Topic Names -->
+    <param name="lidar_points_topic"                value="/points_no_ground"/>
+    <param name="output_frame_"                     value="velodyne"/>
+
+    <!-- Output Topic Names -->
+    <!-- <param name="cloud_ground_topic"                value="obstacle_detector/cloud_ground"/>
+    <param name="cloud_clusters_topic"              value="obstacle_detector/cloud_clusters"/>
+    <param name="jsk_bboxes_topic"                  value="obstacle_detector/jsk_bboxes"/>
+    <param name="autoware_objects_topic"            value="obstacle_detector/objects"/> -->
+
+  </node>
+
+
+  <!-- <node pkg="tf2_ros" type="static_transform_publisher" name="map_velodyne" args="0 0 0 0 0 0 1 world map" /> -->
+  <!-- <node pkg="tf" type="static_transform_publisher" name="world_velodyne" args="0 0 1 0 0 0 1 velodyne world 100" /> -->
+
+  <!-- Dynamic Reconfigure GUI -->
+  <node name="rqt_reconfigure" pkg="rqt_reconfigure" type="rqt_reconfigure" output="screen" />
+
+  <!-- Rviz -->
+  <node type="rviz" name="rviz" pkg="rviz" args="-d $(find range_image_segment)/rviz/range_image_segment.rviz" output="log" respawn="true" />
+
+</launch> 
