@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- Clustering node for lidar1-->
+  <node pkg="range_dbscan_segment" type="range_dbscan_segment_front" name="range_dbscan_segment_front" output="screen">
+    <!-- Input Topic Names -->
+    <param name="non_ground_cloud_topic"        value="/patchwork/non_ground_cloud_front"/>
+    <param name="output_frame"                  value="velodyne_1"/>
+
+    <!-- Output Topic Names -->
+    <param name="colored_cloud_topic"           value="/segmentation/colored_cloud_front"/>
+    <param name="cluster_cloud_trans_topic"     value="/segmentation/cluster_cloud_trans_front"/>
+  </node>
+
+
+  <!-- Dynamic Reconfigure GUI -->
+  <node name="rqt_reconfigure" pkg="rqt_reconfigure" type="rqt_reconfigure" output="screen" />
+
+  <!-- Rviz -->
+  <node type="rviz" name="rviz" pkg="rviz" args="-d $(find range_dbscan_segment)/rviz/range_dbscan_segment.rviz" output="log" respawn="false" />
+
+</launch> 

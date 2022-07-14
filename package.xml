@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>range_image_segment</name>
+  <name>range_dbscan_segment</name>
   <version>1.0.0</version>
-  <description>The range_image_segment package</description>
+  <description>The range_dbscan_segment package</description>
   <maintainer email="hmx_2013@outlook.com">hmx</maintainer>
   <license>TODO</license>
 

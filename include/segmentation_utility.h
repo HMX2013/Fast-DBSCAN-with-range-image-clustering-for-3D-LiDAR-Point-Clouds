@@ -15,8 +15,6 @@ extern const int Horizon_SCAN = 1800;
 extern const float ang_res_x = 0.2;
 extern const float ang_res_y = 2.0;
 extern const float ang_bottom = 15.0+0.1;
-extern const int groundScanInd = 7;
-
 
 extern const bool loopClosureEnableFlag = false;//和先验地图匹配不需要回环
 extern const double mappingProcessInterval = 0.2;//yuan:0.3

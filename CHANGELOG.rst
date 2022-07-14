@@ -13,4 +13,10 @@ Changelog for package range image
   * Fix the Nanvalid point effect
   * consider the Nanvalid point in vertical direction
 
+->(2022-06-15)
+-------------------
+* combine the dbscan algorithnm with range image search method to overcome over-segmentation
 
+->(2022-06-16)
+-------------------
+* 
